@@ -25,18 +25,12 @@ public class CubeNoteDigital : MonoBehaviour
     }
 
     public void NoteCW() {
-        CurrentNum = CurrentNum + 1;
-        if (CurrentNum == 5) {
-            CurrentNum = 1;
-        }
-        if (CurrentNum == 0) {
-            CurrentNum = 4;
-        }
+        CurrentNum = (((CurrentNum - 1) + 1) % 4) + 1;
         NoteUpdate();
     }
 
     public void NoteCCW() {
-        CurrentNum = CurrentNum - 1;
+        CurrentNum = (((CurrentNum - 1) - 1) % 4) + 1;
         if (CurrentNum == 0) {
             CurrentNum = 4;
         }

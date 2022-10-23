@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class InGameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    
+
+    public void NoteGen(int lane, int note, int bit, int index) { //96beat deriv.
+        if (!((((lane == 2) || (lane == 3)) && ((1 <= note) && (note <= 4))) && (((lane == 1) || (lane == 4)) && ((0 <= note) && (note <= 1))))) {
+            return;
+        }
         
+        
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void SamplePattern() {
+
     }
 }
