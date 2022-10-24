@@ -72,10 +72,6 @@ public class Note : MonoBehaviour
         curNote.GetComponent<RectTransform>().position += speedVec * 0.001f;
     }
 
-    public void noteHit() {
-        
-    }
-
     
 
 

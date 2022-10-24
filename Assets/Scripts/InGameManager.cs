@@ -50,7 +50,7 @@ public class InGameManager : MonoBehaviour
 
     public void SamplePattern() {
         float bpm = 150.0f;
-        for (int i = 1; i<=10; i++) {
+        for (int i = 1; i<=1000; i++) {
             NoteGen(bpm, 50, 1, ((i) % 2), (i * 2 - 1), 0);
             NoteGen(bpm, 50, 4, ((i) % 2), (i * 2), 0);
         }
