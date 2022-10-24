@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Note : MonoBehaviour
 {
+    public int noteIndex;
     public int speed;
     public int lane; // 1, 4 as analog, 2, 3 as digital
     public int type; // 1, 2, 3, 4 as digital, 0, 1 as analog
@@ -14,6 +15,8 @@ public class Note : MonoBehaviour
     [SerializeField]
     public GameObject curNoteImg;
     
+    public GameObject inputManager;
+    public GameObject InGameManager;
 
     [SerializeField]
     public Sprite Note1;
@@ -50,17 +53,30 @@ public class Note : MonoBehaviour
     }
 
     void Update() {
-        if (curNote.GetComponent<RectTransform>().position.y < -80.0f) {
-            Destroy(curNote);
+        if (curNote.GetComponent<RectTransform>().position.y < -120.0f) {
+            inputManager.GetComponent<InputManager>().JudgeF(curNote.GetComponent<RectTransform>().position.y, speed, curNote);
+            if (lane == 1) {
+                InGameManager.GetComponent<InGameManager>().A1Lane.Dequeue();
+            } else if (lane == 2) {
+                InGameManager.GetComponent<InGameManager>().D1Lane.Dequeue();
+            } else if (lane == 3) {
+                InGameManager.GetComponent<InGameManager>().D2Lane.Dequeue();
+            } else if (lane == 4) {
+                InGameManager.GetComponent<InGameManager>().A2Lane.Dequeue();
+            }
         }
     }
     void FixedUpdate()
     {
         Vector3 speedVec = new Vector3(0, speed, 0);
         curNote.GetComponent<RectTransform>().position += speedVec * 0.001f;
+    }
 
+    public void noteHit() {
         
     }
+
+    
 
 
 }

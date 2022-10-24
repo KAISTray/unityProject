@@ -761,6 +761,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f287d19fc832cba4aa51393d3db31661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InGameManager: {fileID: 1993193841}
+  JudgeManager: {fileID: 1774534861}
   A1Judge: {fileID: 620134116}
   D1Judge: {fileID: 1185684651}
   D2Judge: {fileID: 1716828406}
@@ -3290,6 +3292,50 @@ MonoBehaviour:
   Note4: {fileID: 21300000, guid: 24150afed8c2896459d73fd5b6eeaf06, type: 3}
   CurrentNum: 0
   curNote: {fileID: 1999903652}
+--- !u!1 &1774534861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1774534863}
+  - component: {fileID: 1774534862}
+  m_Layer: 0
+  m_Name: JudgeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1774534862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774534861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d577fbe53953d4a966917a838f3a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1774534863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774534861}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 538.941, y: 249.15448, z: -2.6768086}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1806211495
 GameObject:
   m_ObjectHideFlags: 0
@@ -3615,8 +3661,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 955854a21b8bbcf449ac70eeff604005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notePrefab: {fileID: 7738375147201233463, guid: bbab9c5605a782f4a88eb9d2c600818a, type: 3}
+  selfObj: {fileID: 1993193841}
+  notePrefab: {fileID: 7169417926790120322, guid: 311641655595d2b4b845b2cd1c9d4408, type: 3}
   noteParent: {fileID: 2106488242}
+  InputManager: {fileID: 177792798}
 --- !u!1 &1999903652
 GameObject:
   m_ObjectHideFlags: 0
