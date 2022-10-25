@@ -52,7 +52,15 @@ public class Note : MonoBehaviour
         }
     }
 
+    void start() {
+        curNote.SetActive(false);
+    }
+
     void Update() {
+        if (curNote.GetComponent<RectTransform>().position.y < 600.0f) {
+            curNote.SetActive(true);
+        }
+
         if (curNote.GetComponent<RectTransform>().position.y < -120.0f) {
             inputManager.GetComponent<InputManager>().JudgeF(curNote.GetComponent<RectTransform>().position.y, speed, curNote);
             if (lane == 1) {
@@ -69,7 +77,7 @@ public class Note : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 speedVec = new Vector3(0, speed, 0);
-        curNote.GetComponent<RectTransform>().position += speedVec * 0.001f;
+        curNote.GetComponent<RectTransform>().position += speedVec * Time.fixedDeltaTime;
     }
 
     
